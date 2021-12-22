@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Hello world app</title>
+</head>
+<body>
+    <h1>Hello world!</h1>
+    <p>
+        This is a simple hello world app ran in docker.
+    </p>
+
+<h2>Sample todo list</h2>
+<form th:action="@{/todo}"
+      th:method="post"
+      th:object="${todoList}">
+    <input type="text" placeholder="Todo item" name="name" field="*{name}">
+    <input type="text" name="time" placeholder="Start time" field="*{time}">
+    <input type="duration" value="duration" duration="duration" field="*{duration}">
+    <input type="submit" value="Add">
+</form>
+<div><a href="/todo">List is in form of json here</a></div>
+</div>
+</body>
+</html>
